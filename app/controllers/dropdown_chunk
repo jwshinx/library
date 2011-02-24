@@ -1,0 +1,10 @@
+  def get_category_dropdown
+    @categories = Category.find(:all, :order => "name ASC").map do |c|
+                    [c.name, c.id]
+    end
+  end
+  def get_author_dropdown
+    @authors = Author.find(:all, :order => "lastname ASC").map do |c|
+                    ["#{c.lastname}, #{c.firstname}", c.id]
+    end
+  end
